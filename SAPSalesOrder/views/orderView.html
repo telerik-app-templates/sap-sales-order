@@ -1,0 +1,66 @@
+<style>
+    .km-orders:after,
+    .km-orders:before
+    {
+        content: "\e07a";
+    }
+</style>
+
+<div data-role="view" id="order-view" data-show="app.Order.show">
+    <header data-role="header">
+        <div data-role="navbar">
+            Order Details
+            <a  data-align="left" data-icon="bck" data-role="backbutton"></a>
+        </div>
+    </header>
+    <ul id="partner-view-container"  data-role="listview" data-style="inset" class=colorblack>
+        <li>
+            <div align=center>
+                <span style="font-weight:bold;font-size:20px">SO:</span><span style="font-weight:bold;font-size:20px" data-bind="text: SalesOrderID">
+                </span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span>Order Date:</span>
+                <br>
+                <b>
+                    <span data-bind="text: CreatedAtFormatted"></span>
+                </b>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+                <span>Net Sum:</span>
+                <br>
+                <b>
+                    <span data-bind="text: Currency"></span> <span data-bind="text: NetSum"></span>
+                </b>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+                <span>Tax:</span>
+                <br>
+                <b>
+                    <span data-bind="text: Currency"></span> <span data-bind="text: Tax"></span>
+                </b>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+                <span>Total Sum:</span>
+                <br>
+                <b>
+                    <span data-bind="text: Currency"></span> <span data-bind="text: TotalSum"></span>
+                </b>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+                <span>Note:</span>
+                <br/>
+                <b>
+                	<span data-bind="text: Note"></span>
+                </b>
+            </div>
+            <div id="order-chart"></div>
+        </li>
+    </ul>
+</div>

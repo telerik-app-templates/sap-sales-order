@@ -1,0 +1,57 @@
+<style>
+    .km-orders:after,
+    .km-orders:before
+    {
+        content: "\e07a";
+    }
+</style>
+
+<div data-role="view" id="partner-view" data-show="app.Partner.show">
+    <header data-role="header">
+        <div data-role="navbar">
+            Partner Details
+            <a data-align="left" data-icon="bck" data-role="backbutton"></a>
+        </div>
+    </header>
+    <ul id="partner-view-container" data-role="listview" data-style="inset">
+        <li>
+            <div align=center>
+                <span style="font-weight:bold;font-size:20px;color:black" data-bind="text: Company"></span>
+            </div>
+        </li>
+        <li >
+            <div class="colorblack">
+                <span>Legal Form:</span><br><b><span data-bind="text: LegalForm"></span></b>
+            </div>
+            <div>&nbsp;</div>
+            <div class="colorblack">
+                <span>Email:</span><br><b><span data-bind="text: Email"></span></b>
+            </div>
+            <div>&nbsp;</div>
+            <div class="colorblack">
+                <span>Phone:</span><br><b><span data-bind="text: Phone"></span></b>
+            </div>
+            <div>&nbsp;</div>
+            <div class="colorblack">
+                <span>Fax:</span><br><b><span data-bind="text: Fax"></span></b>
+            </div>
+            <div>&nbsp;</div>
+            <div class="colorblack">
+                <span>Web:</span><br><b><span  data-bind="text: Web"></span></b>
+            </div>
+            <div>&nbsp;</div>
+            <div class="colorblack">
+                <span>Address:</span>
+                <br />
+                <b>
+                	<span data-bind="text: Building"></span>, <span data-bind="    text: Street"></span>, <span data-bind="    text: City"></span> - <span data-bind="    text: PostalCode"></span>, <span data-bind="    text: Country"></span>
+                </b>
+            </div>
+        </li>
+    </ul>
+    <div data-role="footer">
+        <div data-role="tabstrip">
+            <a href="views/ordersView.html" data-icon="orders">Orders</a>
+        </div>
+    </div>
+</div>

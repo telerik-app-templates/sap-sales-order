@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.flat.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.dataviz.flat.min.css" rel="stylesheet" />    
+    <link href="styles/main.css" rel="stylesheet" />
+
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.all.min.js"></script>
+    
+    <script src="scripts/settings.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/partners.js"></script>
+    <script src="scripts/partner.js"></script>
+    <script src="scripts/orders.js"></script>
+    <script src="scripts/order.js"></script>
+
+    <style>
+        .km-bck:after,
+        .km-bck:before
+        {
+            content: "\e013";
+        }
+    </style>
+
+</head>
+   <body id="soapp">
+        <div id="homeView" data-role="view" data-model="app.Partners">
+            
+            <header data-role="header">
+                <div data-role="navbar">
+                    Business Partners
+                </div>                
+            </header>
+
+            <ul id="partners-listview"  data-role="listview" 
+                data-template="activityTemplate"
+                data-bind="source: partners"
+                data-style="inset"
+                data-filterable="{field:'Company',operator:'startswith'}"></ul>
+            
+        </div>
+        
+        <script type="text/x-kendo-template" id="activityTemplate">
+            <div data-role="touch" data-bind="events: { tap: partnerSelected }">
+                <div style="font-size:20px;font-weight:bold;color:black">
+                    <span>${Company}</span>
+                </div>
+                <div style="color:black">${City} ${PostalCode}, ${Country}</div>
+            </div>
+        </script>
+        
+    </body>
+</html>

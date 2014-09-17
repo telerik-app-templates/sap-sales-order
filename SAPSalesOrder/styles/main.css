@@ -1,0 +1,72 @@
+/* IMAGES */
+.welcome-image {
+    background-image: url(../styles/images/appbuilder.png);
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 250px;
+    display: block;
+    margin: 0px auto;
+}
+.logo-image {
+    background-image: url(../styles/images/logo.png);
+    background-repeat: no-repeat;
+    width: 319px;
+    height: 60px;
+    display: block;
+    margin: 0px auto;
+}
+
+
+/* RETINA DISPLAY STYLES */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+    .welcome-image {
+        background-image: url(../styles/images/appbuilder2x.png);
+        background-size: 100%;
+    }
+    .logo-image {
+        background-image: url(../styles/images/logo2x.png);
+        background-size: 100%;
+    }
+}
+
+#soapp.km-flat,
+#soapp.km-flat .km-navbar,
+#soapp.km-flat .km-content {
+    border: 0 none;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    background-color: #2d3e50;
+}
+
+.colorblack
+{
+    color: black;
+}
+
+   .km-ksave:after,
+    .km-ksave:before
+    {
+        content: "\e0bd";
+    }
+
+#new-partner-form
+{
+    color : black;
+}
+#new-partner-form .sectionheader{
+    font-weight:bold;
+    font-size:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color : white;
+}
+
+.km-flat .km-tabstrip .km-state-active
+{
+    background:#4c5356;
+}
+
+.km-flat .km-button
+{
+    background:#4c5356;
+}

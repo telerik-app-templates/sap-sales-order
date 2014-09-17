@@ -1,0 +1,21 @@
+<div id="ordersView" data-role="view" data-model="app.Orders" data-show="app.Orders.show">
+    <header data-role="header">
+        <div data-role="navbar">
+            Sales Orders
+            <a  data-align="left" data-icon="bck" data-role="backbutton"></a>
+        </div>
+    </header>
+    <div id="orders-listview">
+    </div>
+    <div id="no-orders-span" hidden="hidden" align=center>
+        <b>No Sales Orders found.</b>
+    </div>
+</div>
+
+<script type="text/x-kendo-template" id="orderTemplate">
+    <div class=colorblack>
+        <div><b>SO:${SalesOrderID}</b></div>
+        <div>Total : ${Currency} ${TotalSum} | Status : ${LifecycleStatus}</div>
+        <div>Date : ${kendo.toString(ChangedAt,"MMM dd yyyy")}</div>
+    </div>
+</script>
