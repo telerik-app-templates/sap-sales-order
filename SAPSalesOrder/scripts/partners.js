@@ -30,23 +30,13 @@ app.Partners = (function () {
                     url: function () {
                         return appSettings.dataSettings.partnersReadUrl;
                     },
-                    dataType: "json",
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("X-CSRF-Token", "fetch");
-                    },
-                    complete: function (xhr) {
-                        appSettings.authSettings.token = xhr.getResponseHeader("X-CSRF-Token");
-                    }
-
+                    dataType: "json"
                 },
                 create: {
                     url: function () {
                         return appSettings.dataSettings.partnersReadUrl;
                     },
-                    dataType: "json",
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("X-CSRF-Token", appSettings.authSettings.token);
-                    },
+                    dataType: "json"
                 }
             },
             sort: {
