@@ -5,7 +5,7 @@
   "AppIdentifier": "com.telerik.SAPSalesOrder",
   "DisplayName": "SAPSalesOrder",
   "Author": "",
-  "Description": "",
+  "Description": "SAPSalesOrder",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
