@@ -8,6 +8,12 @@ app.Order = (function(){
         var show = function (e) {
             var order = appSettings.sessionSettings.selectedOrder;
 
+            console.log(order);
+            
+            if (order.Tax == 0) {
+                order.Tax = (order.TotalSum - order.NetSum).toFixed(2);
+            }
+            
             kendo.bind(e.view.element, order, kendo.mobile.ui)
 
             $("#order-chart").kendoChart({

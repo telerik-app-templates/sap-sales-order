@@ -31,7 +31,7 @@
 
 </head>
    <body id="soapp">
-        <div id="homeView" data-role="view" data-model="app.Partners">
+        <div id="homeView" data-role="view" data-model="app.Partners" data-init="app.Partners.init">
             
             <header data-role="header">
                 <div data-role="navbar">
@@ -39,7 +39,11 @@
                 </div>                
             </header>
 
-            <ul id="partners-listview"  data-role="listview" 
+           <!-- <ul id="partners-listview">
+                
+            </ul>-->
+            
+            <ul id="partners-listview" data-role="listview" 
                 data-template="activityTemplate"
                 data-bind="source: partners"
                 data-style="inset"

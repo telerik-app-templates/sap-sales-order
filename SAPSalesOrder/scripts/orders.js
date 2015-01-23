@@ -7,12 +7,12 @@ app.Orders = (function () {
         var orderModel = {
             id: "SoId",
             fields: {
-                SalesOrderID: { field: "SoId", type: "string" },
-                NetSum: { field: 'NetAmount', type: 'number' },
-                Tax: { field: 'TaxAmount', type: 'number' },
-                Currency: { field: 'CurrencyCode' },
+                SalesOrderID: { field: "SalesOrderID", type: "string" },
+                NetSum: { field: 'NetSum', type: 'number' },
+                Tax: { field: 'Tax', type: 'number' },
+                Currency: { field: 'Currency' },
                 Note: { field: 'Note' },
-                TotalSum: { field: 'GrossAmount', type: 'number' },
+                TotalSum: { field: 'TotalSum', type: 'number' },
                 Status: { field: 'Status' },
                 Customer: { field: 'CustomerName' },
                 CreatedAt: { field: 'CreatedAt', type: 'date' },
@@ -20,19 +20,17 @@ app.Orders = (function () {
                 BusinessPartnerID: { field: 'BusinessPartnerID' }
             },
             CreatedAtFormatted: function () {
-
                 return kendo.toString(this.get('CreatedAt'), "MMM dd yy");
             },
         };
 
         var ordersDataSource = new kendo.data.DataSource({
-            type: 'odata',
+            //type: 'odata',
             transport: {
                 read: {
                     url: function () {
                         var businessPartnerID = appSettings.sessionSettings.selectedPartner.id;
                         var readUrl = appSettings.dataSettings.ordersReadUrl.replace("#BusinesPartnerID#", businessPartnerID);
-                        console.log(readUrl);
                         return readUrl;
                     },
                     dataType: "json"
@@ -43,10 +41,13 @@ app.Orders = (function () {
                 dir: "desc"
             },
             schema: {
-                model: orderModel
+                model: orderModel,
+                data: function(dta) {
+                    var responseArray = JSON.parse(dta);
+                    return responseArray.d.results;
+                }
             },
             change: function (e) {
-
                 if (e.items && e.items.length > 0) {
                     $('#no-orders-span').hide();
                 } else {
@@ -70,7 +71,7 @@ app.Orders = (function () {
         var orderSelected = function (e) {
             var orderUid = $(e.touch.currentTarget).data("uid");
             appSettings.sessionSettings.selectedOrder = ordersModel.orders.getByUid(orderUid);
-            app.mobileApp.navigate(appSettings.viewSettings.orderView + '?uid=' + orderUid);
+            app.mobileApp.navigate(appSettings.viewSettings.orderView);
         };
 
         var show = function (e) {
@@ -87,7 +88,7 @@ app.Orders = (function () {
                         template: $("#orderTemplate").text()
                     }).kendoTouch({
                         filter: ">li",
-                        tap: orderSelected,
+                        tap: orderSelected
                     });
                 }                
             }
