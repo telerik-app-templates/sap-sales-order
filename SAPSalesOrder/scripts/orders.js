@@ -75,22 +75,26 @@ app.Orders = (function () {
         };
 
         var show = function (e) {
-            if (appSettings.sessionSettings.selectedPartner) {
-                $('#no-orders-span').hide();
-                var listView = $("#orders-listview").data("kendoMobileListView");
-                if (listView) {
-                    listView.setDataSource(ordersModel.orders);
+            if (appSettings.sessionSettings.showFromOrder == true) {
+                appSettings.sessionSettings.showFromOrder = false;
+            } else {
+                if (appSettings.sessionSettings.selectedPartner) {
+                    $('#no-orders-span').hide();
+                    var listView = $("#orders-listview").data("kendoMobileListView");
+                    if (listView) {
+                        listView.setDataSource(ordersModel.orders);
+                    }
+                    else {
+                        $("#orders-listview").kendoMobileListView({
+                            style: "inset",
+                            dataSource: ordersModel.orders,
+                            template: $("#orderTemplate").text()
+                        }).kendoTouch({
+                            filter: ">li",
+                            tap: orderSelected
+                        });
+                    }                
                 }
-                else {
-                    $("#orders-listview").kendoMobileListView({
-                        style: "inset",
-                        dataSource: ordersModel.orders,
-                        template: $("#orderTemplate").text()
-                    }).kendoTouch({
-                        filter: ">li",
-                        tap: orderSelected
-                    });
-                }                
             }
         }
 

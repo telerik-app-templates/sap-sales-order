@@ -6,6 +6,7 @@ app.Order = (function(){
     var orderViewModel = (function(){
                 
         var show = function (e) {
+            appSettings.sessionSettings.showFromOrder = true;
             var order = appSettings.sessionSettings.selectedOrder;
 
             console.log(order);
@@ -29,8 +30,13 @@ app.Order = (function(){
             });
         }
 		
+        var hide = function (e) {
+            
+        };
+        
         return {
-				show:show,
+            show: show,
+            hide: hide
               };                       
     }());
 

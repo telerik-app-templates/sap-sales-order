@@ -20,8 +20,9 @@ var appSettings = {
     
     sessionSettings:
     {
-        selectedPartner:null,
-        selectedOrder:null
+        selectedPartner: null,
+        selectedOrder: null,
+        showFromOrder: false
     },
     
     viewSettings:
