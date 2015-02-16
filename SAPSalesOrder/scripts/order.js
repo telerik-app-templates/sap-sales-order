@@ -8,9 +8,8 @@ app.Order = (function(){
         var show = function (e) {
             appSettings.sessionSettings.showFromOrder = true;
             var order = appSettings.sessionSettings.selectedOrder;
-
-            console.log(order);
-            
+       
+            // Demo data, sometimes Tax is zero, so we fix it if so
             if (order.Tax == 0) {
                 order.Tax = (order.TotalSum - order.NetSum).toFixed(2);
             }

@@ -25,7 +25,6 @@ app.Orders = (function () {
         };
 
         var ordersDataSource = new kendo.data.DataSource({
-            //type: 'odata',
             transport: {
                 read: {
                     url: function () {

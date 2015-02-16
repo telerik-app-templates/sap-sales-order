@@ -6,7 +6,6 @@ app.Partner = (function () {
         
         var show = function (e) {
             var partner = appSettings.sessionSettings.selectedPartner;
-            console.log(partner);
             
             kendo.bind(e.view.element, partner, kendo.mobile.ui)
         }
