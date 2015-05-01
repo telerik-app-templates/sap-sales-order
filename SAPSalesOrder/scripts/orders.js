@@ -74,6 +74,8 @@ app.Orders = (function () {
         };
 
         var show = function (e) {
+            analytics.Monitor().TrackFeatureStart("Sales.Orders");
+            
             if (appSettings.sessionSettings.showFromOrder == true) {
                 appSettings.sessionSettings.showFromOrder = false;
             } else {
@@ -95,11 +97,16 @@ app.Orders = (function () {
                     }                
                 }
             }
-        }
+        };
+        
+        var hide = function(e){
+             analytics.Monitor().TrackFeatureStop("Sales.Orders");
+        };
 
         return {
             orderSelected: orderSelected,
-            show: show
+            show: show,
+            hide: hide
         };
 
     }());

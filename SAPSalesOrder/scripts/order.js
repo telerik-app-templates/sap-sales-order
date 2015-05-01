@@ -6,6 +6,7 @@ app.Order = (function(){
     var orderViewModel = (function(){
                 
         var show = function (e) {
+            analytics.Monitor().TrackFeatureStart("Sales.OrderDetail");
             appSettings.sessionSettings.showFromOrder = true;
             var order = appSettings.sessionSettings.selectedOrder;
        
@@ -30,13 +31,13 @@ app.Order = (function(){
         }
 		
         var hide = function (e) {
-            
+             analytics.Monitor().TrackFeatureStop("Sales.OrderDetail");
         };
         
         return {
             show: show,
             hide: hide
-              };                       
+        };                       
     }());
 
     return orderViewModel;
