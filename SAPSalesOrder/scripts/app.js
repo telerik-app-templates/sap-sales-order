@@ -32,6 +32,11 @@ var app = (function(win){
 	var onDeviceReady = function() {
         // Handle "backbutton" event
         document.addEventListener('backbutton', onBackKeyDown, false);
+        
+   		feedback.initialize('8d1fdce0-ea01-11e4-a808-fd78593b7c77');
+
+        analytics.Start();
+        
     };
     
      // Handle "deviceready" event
