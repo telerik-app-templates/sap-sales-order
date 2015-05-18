@@ -7,6 +7,7 @@
     display: block;
     margin: 0px auto;
 }
+
 .logo-image {
     background-image: url(../styles/images/logo.png);
     background-repeat: no-repeat;
@@ -15,10 +16,10 @@
     display: block;
     margin: 0px auto;
 }
-
-
 /* RETINA DISPLAY STYLES */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
     .welcome-image {
         background-image: url(../styles/images/appbuilder2x.png);
         background-size: 100%;
@@ -38,35 +39,47 @@
     background-color: #2d3e50;
 }
 
-.colorblack
-{
+.colorblack {
+    color: black;
+}
+.km-ksave:after,
+.km-ksave:before {
+    content: "\e0bd";
+}
+
+#new-partner-form {
     color: black;
 }
 
-   .km-ksave:after,
-    .km-ksave:before
-    {
-        content: "\e0bd";
-    }
-
-#new-partner-form
-{
-    color : black;
-}
-#new-partner-form .sectionheader{
-    font-weight:bold;
-    font-size:20px;
-    padding-top:5px;
-    padding-bottom:5px;
-    color : white;
+#new-partner-form .sectionheader {
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
 }
 
-.km-flat .km-tabstrip .km-state-active
-{
-    background:#4c5356;
+.km-flat .km-tabstrip .km-state-active {
+    background: #4c5356;
 }
 
-.km-flat .km-button
-{
-    background:#4c5356;
+.km-flat .km-button {
+    background: #4c5356;
+}
+
+.km-bck:after,
+.km-bck:before {
+    content: "\e013";
+}
+
+.km-flat .km-back {
+    background: none;
+    border: 0;
+    font-size: 1.5em;
+    padding: 0 .4em 0 0;
+}
+
+.km-orders:after,
+.km-orders:before {
+    content: "\e07a";
 }

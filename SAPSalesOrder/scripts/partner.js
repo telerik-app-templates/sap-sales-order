@@ -2,6 +2,7 @@ var app = app || {};
 
 app.Partner = (function () {
     'use strict'
+    
     var partnerViewModel = (function () {
         
         var show = function (e) {

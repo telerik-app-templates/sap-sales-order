@@ -1,11 +1,3 @@
-<style>
-    .km-orders:after,
-    .km-orders:before
-    {
-        content: "\e07a";
-    }
-</style>
-
 <div data-role="view" id="partner-view" data-show="app.Partner.show">
     <header data-role="header">
         <div data-role="navbar">
@@ -19,32 +11,45 @@
                 <span style="font-weight:bold;font-size:20px;color:black" data-bind="text: Company"></span>
             </div>
         </li>
-        <li >
+        <li>
             <div class="colorblack">
-                <span>Legal Form:</span><br><b><span data-bind="text: LegalForm"></span></b>
+                <span>Legal Form:</span>
+                <br />
+                <b><span data-bind="text: LegalForm"></span></b>
             </div>
             <div>&nbsp;</div>
             <div class="colorblack">
-                <span>Email:</span><br><b><span data-bind="text: Email"></span></b>
+                <span>Email:</span>
+                <br />
+                <b><span data-bind="text: Email"></span></b>
             </div>
             <div>&nbsp;</div>
             <div class="colorblack">
-                <span>Phone:</span><br><b><span data-bind="text: Phone"></span></b>
+                <span>Phone:</span>
+                <br />
+                <b><span data-bind="text: Phone"></span></b>
             </div>
             <div>&nbsp;</div>
             <div class="colorblack">
-                <span>Fax:</span><br><b><span data-bind="text: Fax"></span></b>
+                <span>Fax:</span>
+                <br />
+                <b><span data-bind="text: Fax"></span></b>
             </div>
             <div>&nbsp;</div>
             <div class="colorblack">
-                <span>Web:</span><br><b><span  data-bind="text: Web"></span></b>
+                <span>Web:</span>
+                <br /><b><span  data-bind="text: Web"></span></b>
             </div>
             <div>&nbsp;</div>
             <div class="colorblack">
                 <span>Address:</span>
                 <br />
                 <b>
-                	<span data-bind="text: Building"></span>, <span data-bind="    text: Street"></span>, <span data-bind="    text: City"></span> - <span data-bind="    text: PostalCode"></span>, <span data-bind="    text: Country"></span>
+                	<span data-bind="text: Building"></span>,
+                    <span data-bind="text: Street"></span>,
+                    <span data-bind="text: City"></span> - 
+                    <span data-bind="text: PostalCode"></span>,
+                    <span data-bind="text: Country"></span>
                 </b>
             </div>
         </li>
