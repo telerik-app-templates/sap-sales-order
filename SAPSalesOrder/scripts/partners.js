@@ -24,37 +24,24 @@ app.Partners = (function () {
         };
 
         var partnersDataSource = new kendo.data.DataSource({
-            type: 'odata',
             transport: {
                 read: {
                     url: function () {
                         return appSettings.dataSettings.partnersReadUrl;
                     },
-                    dataType: "json",
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("X-CSRF-Token", "fetch");
-                    },
-                    complete: function (xhr) {
-                        appSettings.authSettings.token = xhr.getResponseHeader("X-CSRF-Token");
-                    }
-
-                },
-                create: {
-                    url: function () {
-                        return appSettings.dataSettings.partnersReadUrl;
-                    },
-                    dataType: "json",
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("X-CSRF-Token", appSettings.authSettings.token);
-                    },
+                    dataType: "json"
                 }
             },
             sort: {
-                field: "CompanyName",
+                field: "Company",
                 dir: "asc"
             },
             schema: {
-                model: partnerModel
+                model: partnerModel,
+                data: function(dta) {
+                    var responseArray = JSON.parse(dta);
+                    return responseArray.d.results;
+                }
             },
             pageSize: 50,
             serverPaging: true,
@@ -66,14 +53,20 @@ app.Partners = (function () {
         }
 
     }());
-
+    
     var partnersViewModel = (function () {
-
+        
         var partnerSelected = function (e) {
+            appSettings.sessionSettings.selectedPartner = e.data;
             app.mobileApp.navigate(appSettings.viewSettings.partnerView + '?uid=' + e.data.uid);
         };
 
+        var init = function (e) {
+
+        };
+        
         return {
+            init: init,
             partners: partnersModel.partners,
             partnerSelected: partnerSelected,
         };

@@ -14,7 +14,9 @@
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.all.min.js"></script>
     
+    <script src="scripts/analytics.js"></script>
     <script src="scripts/settings.js"></script>
+    
     <script src="scripts/app.js"></script>
     <script src="scripts/partners.js"></script>
     <script src="scripts/partner.js"></script>
@@ -22,24 +24,20 @@
     <script src="scripts/order.js"></script>
 
     <style>
-        .km-bck:after,
-        .km-bck:before
-        {
-            content: "\e013";
-        }
+
     </style>
 
 </head>
    <body id="soapp">
-        <div id="homeView" data-role="view" data-model="app.Partners">
+        <div id="homeView" data-role="view" data-model="app.Partners" data-init="app.Partners.init">
             
             <header data-role="header">
                 <div data-role="navbar">
-                    Business Partners
+                  HP Business Partners
                 </div>                
             </header>
-
-            <ul id="partners-listview"  data-role="listview" 
+            
+            <ul id="partners-listview" data-role="listview" 
                 data-template="activityTemplate"
                 data-bind="source: partners"
                 data-style="inset"
