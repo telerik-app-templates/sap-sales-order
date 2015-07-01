@@ -33,16 +33,22 @@
             
             <header data-role="header">
                 <div data-role="navbar">
-                  Business Partners
+                  QAD Business Partners
                 </div>                
             </header>
             
-            <ul id="partners-listview" data-role="listview" 
-                data-template="activityTemplate"
-                data-bind="source: partners"
-                data-style="inset"
-                data-filterable="{field:'Company',operator:'startswith'}"></ul>
-            
+            <div id="sap-long-load-div" hidden="hidden" style="margin: 1em;">
+                <span>You are seeing this if the SAP servers are taking too long to respond.  Due to the public demo gateway data, sometimes the data takes longer to retrieve than our Cloud Code allows for individual calls, so it is possible the public SAP server is overloaded or the connection just isn't working.  Try reloading the app to see if a second try works better, otherwise you might want to use a different demo.
+
+				Sorry!</span>
+            </div>
+            <div id="partner-list-wrapper">                            
+                <ul id="partners-listview" data-role="listview" 
+                    data-template="activityTemplate"
+                    data-bind="source: partners"
+                    data-style="inset"
+                    data-filterable="{field:'Company',operator:'startswith'}"></ul>
+			</div>            
         </div>
         
         <script type="text/x-kendo-template" id="activityTemplate">

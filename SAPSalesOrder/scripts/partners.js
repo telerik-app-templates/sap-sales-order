@@ -46,6 +46,13 @@ app.Partners = (function () {
             pageSize: 50,
             serverPaging: true,
             serverSorting: true,
+            error: function (e) {
+                console.log("datasource error");
+                console.log(e);
+                app.mobileApp.hideLoading();
+                $("#sap-long-load-div").show();
+                $("#partner-list-wrapper").hide();
+            }
         });
 
         return {
