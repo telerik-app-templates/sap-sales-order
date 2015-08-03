@@ -10,9 +10,9 @@ var appSettings = {
         //ordersReadUrl : "https://sapes1.sapdevcenter.com/sap/opu/odata/sap/ZCD204_EPM_DEMO_SRV/BusinessPartners('#BusinesPartnerID#')/SalesOrders",
         //itemsReadUrl: "https://sapes1.sapdevcenter.com/sap/opu/odata/sap/ZCD204_EPM_DEMO_SRV/SalesOrders('#SalesOrderID#')/SalesOrderItems" 
         
-        partnersReadUrl: "http://api.everlive.com/v1/yqPFi0boAHdvqEWg/functions/SAPProxy?uri=https://sapes1.sapdevcenter.com/sap/opu/odata/sap/ZCD204_EPM_DEMO_SRV/BusinessPartners",
-        ordersReadUrl: "http://api.everlive.com/v1/yqPFi0boAHdvqEWg/functions/SAPProxy?uri=https://sapes1.sapdevcenter.com/sap/opu/odata/sap/ZCD204_EPM_DEMO_SRV/BusinessPartners('#BusinesPartnerID#')/SalesOrders",
-        itemsReadUrl: "http://api.everlive.com/v1/yqPFi0boAHdvqEWg/functions/SAPProxy?uri=https://sapes1.sapdevcenter.com/sap/opu/odata/sap/ZCD204_EPM_DEMO_SRV/SalesOrders('#SalesOrderID#')/SalesOrderItems"
+        partnersReadUrl: "http://api.everlive.com/v1/23ZH7Cpo7iESV8wo/functions/SAPProxy?uri=https://sapes1.sapdevcenter.com/sap/opu/odata/sap/ZCD204_EPM_DEMO_SRV/BusinessPartners",
+        ordersReadUrl: "http://api.everlive.com/v1/23ZH7Cpo7iESV8wo/functions/SAPProxy?uri=https://sapes1.sapdevcenter.com/sap/opu/odata/sap/ZCD204_EPM_DEMO_SRV/BusinessPartners('#BusinesPartnerID#')/SalesOrders",
+        itemsReadUrl: "http://api.everlive.com/v1/23ZH7Cpo7iESV8wo/functions/SAPProxy?uri=https://sapes1.sapdevcenter.com/sap/opu/odata/sap/ZCD204_EPM_DEMO_SRV/SalesOrders('#SalesOrderID#')/SalesOrderItems"
     },
     
     sessionSettings:
